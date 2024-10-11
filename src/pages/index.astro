@@ -30,23 +30,30 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Marvin Magaña"
+					tagline="Full-Stack Web Developer. Based in San Miguel, El Salvador."
 					align="start"
 				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+					
+					<div class="cta">
+						<CallToAction href="/work/">
+							See my work
+						</CallToAction>
 					</div>
+
 				</Hero>
 
 				<img
 					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
+					width="300"
+					height="380"
+					src="/assets/avatar.png"
 				/>
+				<!-- <div class="roles">
+					<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+					<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
+					<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+				</div> -->
 			</header>
 
 			<Skills />
@@ -121,19 +128,27 @@ const projects = (await getCollection('work'))
 	.hero img {
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
-		object-position: top;
+		object-position: center;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+	}
+
+	.hero .cta {
+		max-width: 250px;
+		align-self: center;
 	}
 
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
-			grid-template-columns: 6fr 4fr;
+			grid-template-columns: 7fr 3fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
 
+		.hero .cta {
+			align-self: flex-start;
+		}
 		.roles {
 			margin-top: 0.5rem;
 			display: flex;
